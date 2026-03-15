@@ -620,7 +620,6 @@ select.form-input option{background:#111;color:#fff}
 </div>
 
 <script>
-const WHATSAPP_NUMBER = '923186917608';
 let screenshotDataUrl = '';
 
 function openModal(){
@@ -712,22 +711,8 @@ function submitForm(){
   btn.disabled=true;
   btn.textContent='Submitting...';
 
-  const first=document.getElementById('firstName').value.trim();
-  const last=document.getElementById('lastName').value.trim();
-  const email=document.getElementById('userEmail').value.trim();
-  const phone=document.getElementById('userPhone').value.trim();
-  const dob=document.getElementById('userDob').value;
-  const country=document.getElementById('userCountry').value;
-  const city=document.getElementById('userCity').value.trim();
-  const address=document.getElementById('userAddress').value.trim();
-  const zip=document.getElementById('userZip').value.trim();
-
-  const msg=`*New GFT Account Request*%0A%0A*Personal Details*%0AName: ${first} ${last}%0ADOB: ${dob}%0AEmail: ${email}%0APhone: ${phone}%0A%0A*Address*%0ACountry: ${country}%0ACity: ${city}%0AAddress: ${address}%0AZip: ${zip}%0A%0A*Payment*%0ATx ID: ${tx}%0AAmount: 5 USDT (TRC20)%0AAccount: $1,000 Funded%0A%0A_(Screenshot attached separately)_`;
-  const waUrl=`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
-
   setTimeout(()=>{
     setStep(3);
-    window.open(waUrl,'_blank');
   },800);
 }
 </script>
